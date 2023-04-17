@@ -68,7 +68,7 @@ function markAsSigned() {
                 document.getElementsByClassName('loader')[0].style.display = 'none';
                 document.getElementsByClassName('overlay')[0].style.display = 'none';
 
-                document.getElementById('sign-submit-button').innerText = "THANKS!";
+                document.getElementById('sign-submit-button').innerText = "Thank you for committing to invest in our planet.";
                 document.getElementById('esign-button').style.pointerEvents = 'none';
             } else {
                 // console.log('failed');
