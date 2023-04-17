@@ -24,7 +24,7 @@ function getName() {
             var response = JSON.parse(xmlhttp.responseText);
             if (xmlhttp.status === 200) {
                 // console.log('successful');
-                document.getElementsByClassName('employee-name')[0].innerText = response.Name;
+                document.getElementsByClassName('employee-name')[0].innerText = response.Name.toUpperCase();
                 document.getElementsByClassName('employee-name')[1].innerText = response.Name;
 
                 document.getElementsByClassName('loader')[0].style.display = 'none';
