@@ -30,12 +30,20 @@ function getName() {
                 document.getElementsByClassName('loader')[0].style.display = 'none';
                 document.getElementsByClassName('overlay')[0].style.display = 'none';
 
-                document.getElementById('today-date').innerText = new Date().toLocaleDateString(
-                    "en-US", { year: 'numeric', month: 'long', day: 'numeric' }
-                );
 
                 if (response.Name && response.Name.length > 0) {
-                    document.getElementById('esign-button').style.pointerEvents = 'all';
+                    if (response.Signed) {
+                        document.getElementById("signature").style.visibility = 'visible';
+                        document.getElementById('today-date').innerText = new Date(response.SignedDate).toLocaleDateString(
+                            "en-US", { year: 'numeric', month: 'long', day: 'numeric' }
+                        );
+                        document.getElementById('sign-submit-button').innerText = "Thank you for committing to invest in our planet.";
+                    } else {
+                        document.getElementById('esign-button').style.pointerEvents = 'all';
+                        document.getElementById('today-date').innerText = new Date().toLocaleDateString(
+                            "en-US", { year: 'numeric', month: 'long', day: 'numeric' }
+                        );
+                    }
                 }
             } else {
                 // console.log('failed');
